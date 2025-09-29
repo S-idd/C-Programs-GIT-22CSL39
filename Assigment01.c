@@ -38,7 +38,7 @@ int main (){
 
 	switch (ch){
 
-		case '1' :printf("%d", *ptra + *ptrb );
+		case '1' :printf("%d", *ptra + *ptrb ); // This Is Called Derefrencing 
 				  break;
 		case '2' :printf("%d", *ptra - *ptrb );
 				  break;
