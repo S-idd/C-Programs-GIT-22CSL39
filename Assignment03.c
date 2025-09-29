@@ -2,11 +2,11 @@
 
 typedef struct StudentINFO{
 
-	int rollno;
+	int Subject_Code;
 
-	char  Name [18];
+	char  Subject_Name [18];
 
-	char USN [10];
+	char Faculty_Handler [18];
 	
 }StudentINFO;
 
@@ -28,15 +28,15 @@ int main (){
 
 		printf("Enter The Student Name :") ;
 
-		scanf("%254s",SIptr->Name) ;
+		scanf("%d",SIptr->Subject_Code) ;
 
 		printf("Enter The RollNo :") ;
 
-		scanf("%d",&SIptr->rollno) ;
+		scanf("%254s",SIptr->Subject_Name) ;
 
 		printf("Enter the USN:") ;
 
-		scanf("%254s",SIptr->USN) ;
+		scanf("%254s",SIptr->Faculty_Handler) ;
 
 		SIptr++;
 
@@ -49,11 +49,11 @@ int main (){
 
 	for (int i = 0 ; i < Size ;i++) {
 
-		printf("%s \n" ,SIptr->Name) ;
+		printf("%d \n" ,SIptr->Subject_Code) ;
 
-		printf("%s \n" ,SIptr->USN) ;
+		printf("%s \n" ,SIptr->Subject_Name) ;
 
-		printf("%d \n",SIptr->rollno) ;
+		printf("%s \n",SIptr->Faculty_Handler) ;
 
 		SIptr++;
 	}
