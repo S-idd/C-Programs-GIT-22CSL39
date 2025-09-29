@@ -14,7 +14,7 @@ int main (){
 
 	int Size ;
 
-	printf("Enter The Number Of Students :") ;
+	printf("Enter The Number Of Subject's :") ;
 
 	scanf("%d" ,&Size) ;
 
@@ -26,15 +26,15 @@ int main (){
 
 	while (Iratation != 0 ) {
 
-		printf("Enter The Student Name :") ;
+		printf("Enter The Subject Code :") ;
 
 		scanf("%d",SIptr->Subject_Code) ;
 
-		printf("Enter The RollNo :") ;
+		printf("Enter The Subject Name :") ;
 
 		scanf("%254s",SIptr->Subject_Name) ;
 
-		printf("Enter the USN:") ;
+		printf("Enter the Name Of The Faculty Handler:") ;
 
 		scanf("%254s",SIptr->Faculty_Handler) ;
 
