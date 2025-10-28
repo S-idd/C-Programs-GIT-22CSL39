@@ -1,0 +1,65 @@
+import java.util.Scanner ;
+
+public class main {
+	
+	static Scanner sc = new Scanner (System.in);
+
+	public static int CalculateAvg (int m1, int m2 ,int m3 ) {
+
+		int total = m1 + m2 + m3 ;
+		
+		int avg = total / 3 ;// Number Of Subjects
+		
+		return (int)Math.ceil(avg) ;
+		
+	}
+
+	public static void main (String [] args ) {
+
+		//Number of Students 5 And Number of Subject Is 3
+		
+		int [] [] Students = new int [5] [3] ;
+
+		//Array Of Marks
+
+		int [] Marks = {0,0,0,0,0} ; // To Store The avg Of 5 Students
+		
+		//Taking Input Form The User In 2D Array
+
+		for (int i =0 ; i < 5 ;i++ ) {
+
+			System.out.print("Enter Marks Of Student " + i ) ;
+
+			for (int j = 0 ;j < 3 ;j++) {
+				
+				Students [ i ] [ j ] = sc.nextInt();
+		
+
+			}
+			
+		}
+		
+		for (int i = 0 ; i < 5 ;i++ ) {
+		
+			for (int j = 0 ;j < 3 ;j++ ) {
+				
+				Marks [ i ] = CalculateAvg (Students [ i ] [ j ] ,Students [ i ] [j],Students [ i ] [j],Students);
+			
+
+			}
+		
+		}
+
+		for (int i = 0 ; i < 5 ;i++ ){
+
+			System.out.print("Average Marks Of Student :" +i) ;
+
+			System.out.print("Total Marks :"+Marks [ i ] );		
+
+		}
+
+
+	}
+
+
+}
