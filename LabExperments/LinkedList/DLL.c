@@ -74,8 +74,9 @@ void insertAtPosition(int data, int pos) {
     newnode->next = temp->next;
     newnode->prev = temp;
 
-    if (temp->next != NULL)
+    if (temp->next != NULL){
         temp->next->prev = newnode;
+    }
 
     temp->next = newnode;
 }
@@ -149,6 +150,22 @@ void display() {
     printf("NULL\n");
 }
 
+int search(int target) {
+    Node *temp = head;
+    int pos = 1;
+    while (temp != NULL) {
+        if (temp->data == target) {
+            printf("Element %d found at position %d\n", target, pos);
+            return pos;
+        }
+        temp = temp->next;
+        pos++;
+    }
+    printf("Element %d not found\n", target);
+    return -1;
+}
+
+
 // MAIN FUNCTION
 int main() {
     int choice, data, pos;
@@ -161,8 +178,9 @@ int main() {
         printf("4. Delete at Beginning\n");
         printf("5. Delete at End\n");
         printf("6. Delete at Position\n");
-        printf("7. Display List\n");
-        printf("8. Exit\n");
+        printf("7. Search Element\n");
+        printf("8. Display List\n");
+        printf("9. Exit\n");
         printf("--------------------------------------\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
@@ -204,10 +222,16 @@ int main() {
                 break;
 
             case 7:
-                display();
+                printf("Enter element to search: ");
+                scanf("%d", &data);
+                search(data);
                 break;
 
             case 8:
+                display();
+                break;
+
+            case 9:
                 return 0;
 
             default:
@@ -215,3 +239,4 @@ int main() {
         }
     }
 }
+
