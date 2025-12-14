@@ -43,8 +43,9 @@ void insertAtEnd(int data) {
     }
 
     Node *temp = head;
-    while (temp->next != NULL)
+    while (temp->next != NULL){
         temp = temp->next;
+    }
 
     temp->next = newnode;
     newnode->prev = temp;

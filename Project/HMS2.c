@@ -92,22 +92,30 @@ void dequeue(Queue *q) {
 // ----------------------------
 void displayQueue(Queue *q) {
     if (isEmpty(q)) {
-        printf("Queue is empty.\n");
+        printf("\nPatient Queue is empty. No more patients.\n");
         return;
     }
 
-    printf("\nCurrent Waiting Patients:\n");
+    printf("\n================ CURRENT WAITING PATIENTS ================\n");
+    printf("%-5s %-20s %-20s %-5s\n", "No.", "Name", "Disease", "Age");
+    printf("-----------------------------------------------------------\n");
 
-    int i = q->front;
+    int i = q->front, count = 1;
     while (1) {
-        printf("%d Patient Name : %s\n", (i+1),q->patients[i].name);
-        printf("%d Patient disease diagnosing With : %s\n",(i+1),q->patients[i].disease);
-        printf("%d Patient Age :%d\n",(i+1),q->patients[i].age);
+        printf("%-5d %-20s %-20s %-5d\n",
+               count,
+               q->patients[i].name,
+               q->patients[i].disease,
+               q->patients[i].age);
 
         if (i == q->rear) break;
+
         i = (i + 1) % q->capacity;
+        count++;
     }
+    printf("===========================================================\n");
 }
+
 
 // ----------------------------
 // Main Program
